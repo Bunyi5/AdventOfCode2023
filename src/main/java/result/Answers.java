@@ -2,7 +2,9 @@ package result;
 
 import java.math.BigInteger;
 
-@SuppressWarnings("unused")
+import lombok.Getter;
+
+@Getter
 public enum Answers {
     TASK1_1_TEST (142),
     TASK1_1_REAL (54968),
@@ -35,7 +37,7 @@ public enum Answers {
     TASK6_2_REAL (new BigInteger("39132886")),
 
     TASK7_1_TEST (6440),
-    TASK7_1_REAL (0),
+    TASK7_1_REAL (253866470),
     TASK7_2_TEST (0),
     TASK7_2_REAL (0);
 
@@ -45,7 +47,4 @@ public enum Answers {
         this.answer = answer;
     }
 
-    public Object getAnswer() {
-        return answer;
-    }
 }
