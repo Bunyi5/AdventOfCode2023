@@ -38,8 +38,8 @@ public enum Answers {
 
     TASK7_1_TEST (6440),
     TASK7_1_REAL (253866470),
-    TASK7_2_TEST (0),
-    TASK7_2_REAL (0);
+    TASK7_2_TEST (5905),
+    TASK7_2_REAL (254494947);
 
     private final Object answer;
 

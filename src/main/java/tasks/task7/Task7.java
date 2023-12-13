@@ -1,6 +1,7 @@
 package tasks.task7;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -16,8 +17,8 @@ public class Task7 extends Task<Map<String, Integer>, Integer> {
     public static void main(String[] args) throws IOException {
         Task7 task7 = new Task7();
 
-        task7.runMain(RunType.TEST, 1, true, false);
-        task7.runMain(RunType.REAL, 1, true, false);
+        task7.runMain(RunType.TEST, 1, true, true);
+        task7.runMain(RunType.REAL, 1, true, true);
     }
 
     @Override
@@ -30,8 +31,16 @@ public class Task7 extends Task<Map<String, Integer>, Integer> {
 
     @Override
     protected Integer solveFirstPart(Map<String, Integer> inputText) {
+        return countTotalWinnings(inputText, new CamelCardComparator());
+    }
 
-        Map<String, Integer> sortedMap = new TreeMap<>(new CamelCardComparator());
+    @Override
+    protected Integer solveSecondPart(Map<String, Integer> inputText) {
+        return countTotalWinnings(inputText, new CamelCardComparatorWithJoker());
+    }
+
+    private static int countTotalWinnings(Map<String, Integer> inputText, Comparator<String> comparator) {
+        Map<String, Integer> sortedMap = new TreeMap<>(comparator);
         sortedMap.putAll(inputText);
 
         int totalWinnings = 0;
@@ -41,10 +50,5 @@ public class Task7 extends Task<Map<String, Integer>, Integer> {
         }
 
         return totalWinnings;
-    }
-
-    @Override
-    protected Integer solveSecondPart(Map<String, Integer> inputText) {
-        return null;
     }
 }

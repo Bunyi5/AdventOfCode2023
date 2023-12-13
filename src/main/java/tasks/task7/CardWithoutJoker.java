@@ -8,7 +8,7 @@ import java.util.Map;
 import lombok.Getter;
 
 @Getter
-public enum Card {
+public enum CardWithoutJoker {
     ACE("A", 14),
     KING("K", 13),
     QUEEN("Q", 12),
@@ -23,10 +23,10 @@ public enum Card {
     THREE("3", 3),
     TWO("2", 2);
 
-    private static final Map<String, Card> BY_NAME = new HashMap<>();
+    private static final Map<String, CardWithoutJoker> BY_NAME = new HashMap<>();
 
     static {
-        for (Card c : values()) {
+        for (CardWithoutJoker c : values()) {
             BY_NAME.put(c.name, c);
         }
     }
@@ -34,14 +34,14 @@ public enum Card {
     private final String name;
     private final Integer value;
 
-    Card(String name, Integer value) {
+    CardWithoutJoker(String name, Integer value) {
         this.name = name;
         this.value = value;
     }
 
     public static List<String> getNames() {
-        return Arrays.stream(Card.values())
-            .map(Card::getName)
+        return Arrays.stream(CardWithoutJoker.values())
+            .map(CardWithoutJoker::getName)
             .toList();
     }
 
