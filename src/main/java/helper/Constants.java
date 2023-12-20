@@ -5,6 +5,7 @@ public class Constants {
     public static final String RESOURCE_PATH = "src/main/resources/";
 
     public static final String LINE_SEPARATOR = "\\r?\\n";
+    public static final String LINE_SEPARATORS = "[\\r?\\n]+";
     public static final String COMMA = ",";
     public static final String WHITESPACE = "\\s";
     public static final String WHITESPACES = "\\s+";
